@@ -6,7 +6,7 @@ import app from "./app";
 
 const PORT = Number(process.env.PORT) || 4000;
 
-console.log("Env - ",process.env.RANDOM);
+console.log("Env - ",process.env.RANDOM || process.env.APPSETTING_RANDOM);
 
 
 app.listen(PORT, () => {

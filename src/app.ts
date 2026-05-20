@@ -9,7 +9,7 @@ const defaultAllowedOrigins = [
 	"http://127.0.0.1:5173"
 ];
 
-const envAllowedOrigins = (process.env.CORS_ORIGINS || "")
+const envAllowedOrigins = (process.env.CORS_ORIGINS || process.env.APPSETTING_CORS_ORIGINS || "")
 	.split(",")
 	.map((origin) => origin.trim())
 	.filter(Boolean);

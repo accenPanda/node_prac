@@ -1,11 +1,7 @@
-import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
 
 import app from "./app";
-
-// Enable CORS middleware
-app.use(cors());
 
 const PORT = Number(process.env.PORT) || 4000;
 

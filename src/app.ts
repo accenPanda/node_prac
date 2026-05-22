@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import apiRouter from "./routes";
+import * as appInsights from "applicationinsights";
 
 const app = express();
 
@@ -29,6 +30,10 @@ const corsOptions: cors.CorsOptions = {
 	},
 	credentials: true
 };
+
+appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING || process.env.APPSETTING_APPLICATIONINSIGHTS_CONNECTION_STRING || "").setInternalLogging(true, true) // Enable both debug and warning logging
+    .setAutoCollectConsole(true, true) // Generate Trace telemetry for winston/bunyan and console logs
+    .start();
 
 app.use(cors(corsOptions));
 app.use(express.json());

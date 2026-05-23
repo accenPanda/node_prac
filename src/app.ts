@@ -8,22 +8,6 @@ const connectionString = process.env.APPLICATIONINSIGHTS_CONNECTION_STRING || pr
 //     .setAutoCollectConsole(true, true) // Generate Trace telemetry for winston/bunyan and console logs
 //     .start();
 
-
-console.log("AI Connection:", connectionString);
-
-appInsights.setup(connectionString)
- .setAutoCollectRequests(true)
-  .setAutoCollectPerformance(true,true)
-  .setAutoCollectExceptions(true)
-  .setAutoCollectDependencies(true)
-  .setAutoDependencyCorrelation(true)
-  .setDistributedTracingMode(
-    appInsights.DistributedTracingModes.AI
-  )
-  .start();
-
-console.log("AI Configured");
-
 // appInsights.start();
 
 // console.log("AI Started");

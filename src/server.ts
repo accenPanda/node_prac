@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+import "./telemetry";
+
 import app from "./app";
 
 const PORT = Number(process.env.PORT) || 4000;

@@ -24,7 +24,7 @@ router.get("/slow-api", slowAPI);
 router.get("/app-insights", checkAppInsights);
 router.post("/users", insertUser);
 router.post("/login", loginUser);
-router.put("/users/:id/profile-picture", updateUserProfilePicture);
+router.put("/users/profile-picture/:id", updateUserProfilePicture);
 router.post("/media-upload", mediaUpload.single("file"), uploadMedia);
 router.get("/media-access-url", getMediaAccessUrl);
 
